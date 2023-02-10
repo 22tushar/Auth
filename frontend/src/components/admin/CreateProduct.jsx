@@ -4,16 +4,19 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { PrimaryButton } from "./CommonStyled";
 import { productsCreate } from "../../slices/productsSlice";
-
+import { registerUser } from "../../slices/authSlice";
+import { toast } from "react-toastify";
 const CreateProduct = () => {
   const dispatch = useDispatch();
   const { createStatus } = useSelector((state) => state.products);
 
-  // const [productImg, setProductImg] = useState("");
-  const [brand, setBrand] = useState("");
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [desc, setDesc] = useState("");
+  const [user, setUser] = useState({
+    role:"",
+    name: "",
+    desc:"",
+    email: "",
+    password: "",
+  });
 
   // const handleProductImageUpload = (e) => {
   //   const file = e.target.files[0];
@@ -33,58 +36,49 @@ const CreateProduct = () => {
   //     setProductImg("");
   //   }
   // };
-
+  const navigate=useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    dispatch(
-      productsCreate({
-        name,
-        brand,
-        price,
-        desc,
-        // image: productImg,
-      })
-    );
+   
+    console.log(user);
+    dispatch(registerUser(user));
+    toast.success("Client Added", { position: "top-right" });
+    // navigate('/Home.js')
   };
 
   return (
     <StyledCreateProduct>
       <StyledForm onSubmit={handleSubmit}>
-        <h3>Create a Product</h3>
-        {/* <input
-          id="imgUpload"
-          accept="image/*"
-          type="file"
-          onChange={handleProductImageUpload}
-          required
-        /> */}
-        <select onChange={(e) => setBrand(e.target.value)} required>
-          <option value="">Select Brand</option>
-          <option value="iphone">iPhone</option>
-          <option value="samsung">Samsung</option>
-          <option value="xiomi">Xiomi</option>
-          <option value="other">Other</option>
+        <h3>Create a Client</h3>
+      
+        <select onChange={(e) => setUser({ ...user, role: e.target.value })}>
+          <option value="">Select Role</option>
+          <option value="TPO">TPO</option>
+          <option value="Company">Company</option>
+          {/* // <option value="xiomi">Xiomi</option> */}
         </select>
+       
         <input
           type="text"
-          placeholder="Name"
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          onChange={(e) => setPrice(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Short Description"
-          onChange={(e) => setDesc(e.target.value)}
-          required
+          placeholder="name"
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
         />
 
+        <input
+          type="text"
+          placeholder="desc"
+          onChange={(e) => setUser({ ...user, desc: e.target.value })}
+        />
+        <input
+          type="email"
+          placeholder="email"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+          <input
+          type="password"
+          placeholder="password"
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
+        />
         <PrimaryButton type="submit">
           {createStatus === "pending" ? "Submitting" : "Submit"}
         </PrimaryButton>

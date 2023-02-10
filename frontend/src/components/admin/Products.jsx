@@ -7,7 +7,7 @@ const Products = () => {
   return (
     <>
       <AdminHeaders>
-        <h2>Products</h2>
+        <h2>Add Client</h2>
         <PrimaryButton
           onClick={() => navigate("/admin/products/create-product")}
         >

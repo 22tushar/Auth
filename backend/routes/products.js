@@ -7,22 +7,27 @@ const router = require("express").Router();
 //CREATE
 
 router.post("/", isAdmin, async (req, res) => {
-  const { name, brand, desc, price } = req.body;
+  const { name, brand, desc, price, image } = req.body;
 
   try {
+    if (image) {
+      const uploadedResponse = await cloudinary.uploader.upload(image, {
+        upload_preset: "online-shop",
+      });
 
-     
+      if (uploadedResponse) {
         const product = new Product({
           name,
           brand,
           desc,
           price,
-          // image: uploadedResponse,
+          image: uploadedResponse,
         });
 
         const savedProduct = await product.save();
         res.status(200).send(savedProduct);
-
+      }
+    }
   } catch (error) {
     console.log(error);
     res.status(500).send(error);

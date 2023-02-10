@@ -1,67 +1,22 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { logoutUser } from "../slices/authSlice";
 import { toast } from "react-toastify";
-import axios from "axios";
-export const url = "http://localhost:5000/api";
+
 const NavBar = () => {
   const dispatch = useDispatch();
   const { cartTotalQuantity } = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
 
   console.log(auth);
-  
-  const [book, setBook] = useState({
-    name: "The Fault In Our Stars",
-    author: "John Green",
-    img: "https://images-na.ssl-images-amazon.com/images/I/817tHNcyAgL.jpg",
-    price: 250,
-  });
-  const initPayment = (data) => {
-    const options = {
-      key: 'rzp_test_9PYSKMZBadK5VM',
-      amount: data.amount,
-      currency: data.currency,
-      order_id: data.id,
-      handler: async (response) => {
-        try {
-          const verifyUrl = "http://localhost:5000/razorpay/verify";
-          const { data } = await axios.post(verifyUrl, response);
-        } catch (error) {
-          console.log(error);
-        }
-      },
-      theme: {
-        color: "#3399cc",
-      },
-    };
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
-  };
-  const handlePayment = async () => {
-    try {
-      const orderUrl = "http://localhost:5000/razorpay/orders";
-      const { data } = await axios.post(orderUrl, { amount: 250 });
-      console.log(data);
-      initPayment(data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
 
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <h2>OnlineShop</h2>
+        <h2>Collabration</h2>
       </Link>
-      <button onClick={handlePayment} color="inherit">
-              Donate
-      </button>
-  
-      <Link to="/cart">
+      {/* <Link to="/cart">
         <div className="nav-bag">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +32,7 @@ const NavBar = () => {
             <span>{cartTotalQuantity}</span>
           </span>
         </div>
-      </Link>
+      </Link> */}
       {auth._id ? (
         <Links>
           {auth.isAdmin ? (
@@ -97,7 +52,7 @@ const NavBar = () => {
       ) : (
         <AuthLinks>
           <Link to="/login">Login</Link>
-          <Link to="register">Register</Link>
+          {/* <Link to="register">Register</Link> */}
         </AuthLinks>
       )}
     </nav>

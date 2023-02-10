@@ -10,7 +10,9 @@ const Register = () => {
   const auth = useSelector((state) => state.auth);
 
   const [user, setUser] = useState({
+    role:"",
     name: "",
+    desc:"",
     email: "",
     password: "",
   });
