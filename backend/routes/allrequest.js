@@ -6,7 +6,7 @@ const router = require("express").Router();
 
 router.get("/allTPO", async (req, res) => {
   try {
-        const allTPO = await user.find({T:true});
+        const allTPO = await User.find({T:true});
         res.status(200).send(allTPO)
   } catch (error) {
     console.log(error);
@@ -17,8 +17,20 @@ router.get("/allTPO", async (req, res) => {
 router.get("/allCampany", async (req, res) => {
   
     try {
-          const allCampany = await user.find({C:true});
+          const allCampany = await User.find({C:true});
           res.status(200).send(allCampany)
+    } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+    }
+  });
+  router.get("/requestAccept", async (req, res) => {
+  
+    try {
+          const allrequestAccepted = await User.find({
+            reqAccept
+            :true});
+          res.status(200).send(allrequestAccepted)
     } catch (error) {
       console.log(error);
       res.status(500).send(error);
@@ -40,10 +52,11 @@ router.get("/allCampany", async (req, res) => {
       }
   });
 
-  router.post("/ReqAccept/:id", async (req, res) => {
+  router.post("/ReqAccept", async (req, res) => {
+    const {email} =req.body
   
     try {
-        await user.findByIdAndUpdate( req.params.id,
+        await User.findOneAndUpdate( {email:email},
             {
               reqAccept:true
             },
