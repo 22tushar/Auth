@@ -41,6 +41,7 @@ const CreateProduct = () => {
     e.preventDefault();
    
     console.log(user);
+
     dispatch(registerUser(user));
     toast.success("Client Added", { position: "top-right" });
     // navigate('/Home.js')
