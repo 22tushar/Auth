@@ -5,7 +5,9 @@ import { url, setHeaders } from "./api";
 
 const initialState = {
   token: localStorage.getItem("token"),
+  role:"",
   name: "",
+  desc:"",
   email: "",
   _id: "",
   isAdmin: false,
@@ -44,8 +46,6 @@ export const loginUser = createAsyncThunk(
     try {
       const token = await axios.post(`${url}/login`, {
         role:values.role,
-        name: values.name,
-        desc:values.desc,
         email: values.email,
         password: values.password,
       });

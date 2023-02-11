@@ -1,32 +1,48 @@
 import React from 'react';
 import './requests.css'
-
-const items =[
-    {
-        id: 1,
-        cname: 'MS',
-        skills: 'react',
-        email:'ms@outlook.com'
-      },
-      {
-        id: 1,
-        cname: 'JP',
-        skills: 'finance api',
-        email:'js@outlook.com'
-      },
-      {
-        id: 1,
-        cname: 'GS',
-        skills: 'database mining',
-        email:'rels@outlook.com'
-      },
+import { url } from '../../slices/api';
+import axios from 'axios';
+import { Experimental_CssVarsProvider } from '@mui/material';
+import { toast } from 'react-toastify';
+const items = [
+  {
+    id: 1,
+    cname: 'MS',
+    skills: 'react',
+    email: 'check1@gmail.com'
+  },
+  {
+    id: 1,
+    cname: 'JP',
+    skills: 'finance api',
+    email: 'js@outlook.com'
+  },
+  {
+    id: 1,
+    cname: 'GS',
+    skills: 'database mining',
+    email: 'rels@outlook.com'
+  },
 ]
 
 const Acceptedlist = () => {
+
+  const sendRequest = async (email) => {
+
+    try {
+         await axios.post(`${url}/allrequest/ReqSent`, {
+         email:email,
+        });
+        console.log("Sent");
+      } catch (error) {
+        console.log("Not sent");
+      }
+      toast.success("Request Sent", { position: "Top-right" });
+  }
   return (
     <div className='section-center-people-search'>
       {items.map((listitem) => {
-        const { id, cname,skills,email} = listitem;
+        const { id, cname, skills, email } = listitem;
         return (
           <article key={id} className='menu-item'>
             <img src='https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg' alt={cname} className='photo' />
@@ -37,11 +53,11 @@ const Acceptedlist = () => {
                 <h4 className="email">{email}</h4>
               </header>
             </div>
-            <button className="sendrequest">Send Request</button>
+            <button className="sendrequest" onClick={() => sendRequest(email)}>Send Request</button>
 
           </article>
         );
-      })}
+      })}S
     </div>
   );
 };

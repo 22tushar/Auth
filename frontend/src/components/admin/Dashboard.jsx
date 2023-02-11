@@ -19,7 +19,7 @@ const Dashboard = () => {
         >
           Summary
         </NavLink> */}
-        <NavLink
+         <NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
