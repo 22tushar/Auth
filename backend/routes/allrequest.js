@@ -1,4 +1,4 @@
-const { user } = require("../models/user");
+const { User } = require("../models/user");
 const { auth, isUser, isAdmin } = require("../middleware/auth");
 const router = require("express").Router();
 
@@ -29,7 +29,7 @@ router.get("/allCampany", async (req, res) => {
   
     const { email } = req.body;
     try {
-        await user.findOneAndUpdate({email},
+        await User.findOneAndUpdate({email},
             {
               reqSent:true
             },
@@ -55,3 +55,4 @@ router.get("/allCampany", async (req, res) => {
   });
 
 //DELETE
+module.exports=router
