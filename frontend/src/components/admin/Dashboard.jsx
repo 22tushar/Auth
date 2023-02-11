@@ -27,22 +27,34 @@ const Dashboard = () => {
         >
         Add Client
         </NavLink>
-        {/* <NavLink
+        <NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/orders"
         >
-          Orders
-        </NavLink> */}
-        {/* <NavLink
+          
+          Companies Hiring
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "link-active" : "link-inactive"
+          }
+          to="/admin/summary"
+        >
+          
+          Accepted Requests
+        </NavLink>
+
+        <NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/users"
         >
-          Users
-        </NavLink> */}
+          All student data
+        </NavLink>
       </SideNav>
       <Content>
         <Outlet />

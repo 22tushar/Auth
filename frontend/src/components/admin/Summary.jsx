@@ -1,5 +1,23 @@
-const Summary = () => {
-  return <h2>Summary</h2>;
-};
+import React from 'react'
+import Acceptedlist from './components/Acceptedlist'
+import Headerfirst from './components/Headerfirst'
 
-export default Summary;
+import './requests.css'
+
+const Summary = () => {
+  return (
+    <div className='RequestsFront'>
+      <div  className="headerforaccepted">
+            <div>
+                <Headerfirst/>
+            </div>
+            <div>
+                <Acceptedlist/>
+            </div>
+      </div>
+      
+    </div>
+  )
+}
+
+export default Summary
