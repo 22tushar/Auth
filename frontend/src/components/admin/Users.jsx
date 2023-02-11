@@ -21,8 +21,8 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-
-
+import axios from 'axios';
+import { useEffect } from 'react';
 function createData(sname, email, branch,currentcompany,yog) {
   return {
     sname,
@@ -113,6 +113,20 @@ function EnhancedTableHead(props) {
     onRequestSort(event, property);
   };
 
+//   const [studentdata,Setstudentdata]=React.useEffect([]);
+  
+//   useEffect(()=>{
+//     const fetchPosts = async ()=>{
+//         await axios.get(`https://docs.google.com/spreadsheets/d/1AN5cHP-hzLesr7ltT4r7XJSsWdqTSqWQIi0WSavAnVU/edit?usp=sharing`)
+//         .then(res=>{
+//           Setstudentdata(res.data);
+//         }).catch(err=>{
+//             console.log(err);
+//         })
+//     }
+//     fetchPosts()
+// },[])
+  
   return (
     <TableHead>
       <TableRow>

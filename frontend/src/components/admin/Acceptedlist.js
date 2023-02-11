@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import './requests.css'
 import { url } from '../../slices/api';
 import axios from 'axios';
@@ -27,6 +27,21 @@ const items = [
 
 const Acceptedlist = () => {
 
+  const [company,Setcompany]=useState([])
+  
+  useEffect(()=>{
+    const fetchPosts = async ()=>{
+        await axios.get(`${url}/allrequest/allCampany`)
+        .then(res=>{
+          Setcompany(res.data);
+        }).catch(err=>{
+            console.log(err);
+        })
+    }
+    fetchPosts()
+},[])
+
+
   const sendRequest = async (email) => {
 
     try {
@@ -37,11 +52,12 @@ const Acceptedlist = () => {
       } catch (error) {
         console.log("Not sent");
       }
-      toast.success("Request Sent", { position: "Top-right" });
+      // toast.success("Request Sent", { position: "Top-right" });
+      alert("request Sent")
   }
   return (
     <div className='section-center-people-search'>
-      {items.map((listitem) => {
+      {company.map((listitem) => {
         const { id, cname, skills, email } = listitem;
         return (
           <article key={id} className='menu-item'>
