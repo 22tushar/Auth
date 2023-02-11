@@ -18,6 +18,7 @@ import Dashboard from "./components/admin/Dashboard";
 import Products from "./components/admin/Products";
 import Users from "./components/admin/Users";
 import Orders from "./components/admin/Oders";
+import Orders1 from "./components/admin/Orders1"
 import Summary from "./components/admin/Summary";
 import CreateProduct from "./components/admin/CreateProduct";
 
@@ -47,6 +48,8 @@ function App() {
               </Route>
               <Route path="users" element={<Users />} />
               <Route path="orders" element={<Orders />} />
+              <Route path="orders1" element={<Orders1/>} />
+              {/* <Route path="alltpo" element={<TPOlist/>} /> */}
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

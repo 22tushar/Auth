@@ -6,36 +6,20 @@ import React from "react";
 const Dashboard = () => {
   const auth = useSelector((state) => state.auth);
 
-  // if (!auth.isAdmin) return <p>Access denied. Not an Admin!</p>;
+//   if (!auth.isAdmin) return <p>Access denied. Not an Admin!</p>;
 
   return (
     <StyledDashboard>
       <SideNav>
         <h3>Quick Links</h3>
-        {/* <NavLink
-          className={({ isActive }) =>
-            isActive ? "link-active" : "link-inactive"
-          }
-          to="/admin/summary"
-        >
-          Summary
-        </NavLink> */}
-         <NavLink
-          className={({ isActive }) =>
-            isActive ? "link-active" : "link-inactive"
-          }
-          to="/admin/products"
-        >
-        Add Client
-        </NavLink>
         <NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/orders"
+          to="/admin/Orders1"
         >
           
-          Companies Hiring
+          All TPO
         </NavLink>
 
         <NavLink
@@ -45,7 +29,7 @@ const Dashboard = () => {
           to="/admin/summary"
         >
           
-          Accepted Requests
+        Hiring Requests
         </NavLink>
 
         <NavLink
@@ -54,7 +38,7 @@ const Dashboard = () => {
           }
           to="/admin/users"
         >
-          All student data
+          Interview Schedule
         </NavLink>
       </SideNav>
       <Content>
