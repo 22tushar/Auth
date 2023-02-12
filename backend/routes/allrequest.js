@@ -52,6 +52,17 @@ router.get("/allCampany", async (req, res) => {
       }
   });
 
+  router.get("/HRequest", async (req, res) => {
+  
+    try {
+        const Hreq= await User.find({reqSent:true});
+        res.status(200).send(Hreq)
+        console.log(Hreq)
+      } catch (error) {
+        res.status(500).send(error);
+      }
+  });
+
   router.post("/ReqAccept", async (req, res) => {
     const {email} =req.body
   
