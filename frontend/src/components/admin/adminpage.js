@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Adminpage() {
   return (
-    <div>Welcome to Admin Dashboard</div>
+    <div><h1>Welcome to Admin Dashboard</h1></div>
   )
 }
