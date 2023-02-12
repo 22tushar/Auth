@@ -19,7 +19,7 @@ const Login = () => {
        navigate("/admin/adminpage")
     }else
     if (auth._id) {
-      navigate("/cart");
+      navigate("/company/companydashboard");
     }
   }, [auth._id, navigate]);
 

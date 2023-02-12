@@ -26,6 +26,7 @@ import Algorithm from "./components/admin/Algorithm";
 import Dashboardc from "./components/company/Dashboard";
 import HRequest from "./components/company/hiringrequest";
 import TPODashboard from "./components/admin/tpoDashboard";
+import Companydashboard from "./components/company/companydashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Login />} />
             <Route path="/company" element={<Dashboardc />}>
+            <Route path="companydashboard" element={<Companydashboard/>} />
               <Route path="Orders" element={<AllTPO/>} />
               <Route path="hiringrequest" element={<HRequest/>} />
             </Route>
