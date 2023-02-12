@@ -12,7 +12,7 @@ const Result = () => {
     )
 }
 
-const Users = () => {
+const Nodemailer = () => {
 
     const form = useRef();
 
@@ -64,4 +64,4 @@ const Users = () => {
     )
 }
 
-export default Users
+export default Nodemailer

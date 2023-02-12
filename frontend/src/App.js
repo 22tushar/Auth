@@ -27,6 +27,7 @@ import Dashboardc from "./components/company/Dashboard";
 import HRequest from "./components/company/hiringrequest";
 import TPODashboard from "./components/admin/tpoDashboard";
 import Companydashboard from "./components/company/companydashboard";
+import Interview from "./components/company/interview";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
             <Route path="companydashboard" element={<Companydashboard/>} />
               <Route path="Orders" element={<AllTPO/>} />
               <Route path="hiringrequest" element={<HRequest/>} />
+              <Route path="interview" element={<Interview/>} />
             </Route>
             <Route path="/admin" element={<Dashboard />}>
             <Route path="tpodashboard" element={<TPODashboard/>} />
