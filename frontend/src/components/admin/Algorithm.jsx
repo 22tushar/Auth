@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar } from 'recharts';
 import axios from 'axios';
 import { url } from '../../slices/api';
+
 const company = [
     {
         id: 1,
@@ -106,6 +107,7 @@ const Algorithm = () => {
     console.log(skillandfreq);
 
     return (
+      
         <div className='bar'>
             <BarChart width={800} height={400} data={skillandfreq}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
