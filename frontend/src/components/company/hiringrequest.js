@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Experimental_CssVarsProvider } from '@mui/material';
 import { toast } from 'react-toastify';
 import Headerfirst2 from '../admin/Headerfirst2';
+
 const items = [
   {
     id: 1,
@@ -43,6 +44,29 @@ const HRequest = () => {
     fetchPosts()
 },[])
 
+const accept = (email) =>{
+  const fetchPosts = async ()=>{
+    await axios.post(`${url}/allrequest/ReqAccept`,{email:email})
+    .then(res=>{
+       console.log("accepted")
+    }).catch(err=>{
+        console.log(err);
+    })
+}
+fetchPosts()
+}
+const reject = (email) =>{
+  const fetchPosts = async ()=>{
+    await axios.post(`${url}/allrequest/reject`,{email:email})
+    .then(res=>{
+        console.log("rejected")
+    }).catch(err=>{
+        console.log(err);
+    })
+}
+fetchPosts()
+}
+
 
 
   return (
@@ -60,6 +84,8 @@ const HRequest = () => {
               </header>
             </div>
             {/* <button className="sendrequest" onClick={() => sendRequest(email)}>Send Request</button> */}
+            <button className="sendrequest" onClick={() => accept(email)}>Accept Request</button>
+            <button className="sendrequest" onClick={() => reject(email)}>Reject Request</button>
 
           </article>
         );
