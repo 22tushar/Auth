@@ -2,6 +2,44 @@ import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar, PieChart, Pie } from 'recharts';
 import './Seedatac.css'
 import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+  studentgraphs: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    '& button': {
+      margin: theme.spacing(1),
+    },
+    '& div': {
+      margin: theme.spacing(1),
+      width: 500,
+      height: 400,
+    }
+  },
+  company_graphs_title: {
+    textAlign: 'center',
+    margin: theme.spacing(2),
+  },
+  companygraphs: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    '& div': {
+      margin: theme.spacing(1),
+      width: 500,
+      height: 400,
+    }
+  },
+  showButton:{
+    border: '2px solid green',
+    padding: '10px',
+    fontweight: '600',
+    backgroundcolor: 'lightgreen',
+    borderradius: '10px',
+  }
+}));
 
 const stud = [
     {
@@ -260,9 +298,9 @@ const Seedata = () => {
     // console.log(branchandfreq);
 
     return (<>
-        <div className='studentgraphs'>
+        <div className='classes.studentgraphs'>
 
-            <button onClick={() => { showData() }}>Show Statistics</button>
+            <button className='classes.showButton' onClick={() => { showData() }}>Show Statistics</button>
             <div>
                 <BarChart width={500} height={400} data={branchandfreq}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
@@ -300,11 +338,11 @@ const Seedata = () => {
             </div>
         </div>
 
-        <div className="company_graphs_title">
+        <div className="classes.company_graphs_title">
             <h3>Company Trends in recent years</h3>
         </div>
 
-        <div className="companygraphs">
+        <div className="classes.companygraphs">
             <div>
                 <BarChart width={500} height={400} data={fullcompanydata}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
