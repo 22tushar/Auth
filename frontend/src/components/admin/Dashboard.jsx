@@ -59,7 +59,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/algorithm"
+          to="/algorithm"
         >
           Skills Recommmendatiom 
         </NavLink>)}

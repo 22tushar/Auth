@@ -56,9 +56,9 @@ function App() {
             <Route path="algorithm" element={<Algorithm/>} />
               <Route path="adminpage" element={<Adminpage />} />
               <Route path="summary" element={<Summary />} />
-              {/* <Route path="products" element={<Products />}>
+              <Route path="products" element={<Products />}>
                 <Route path="create-product" element={<CreateProduct />} />
-              </Route> */}
+              </Route>
               <Route path="users" element={<Users />} />
               <Route path="orders" element={<Orders />} />
               <Route path="orders1" element={<AllTPO/>} />
