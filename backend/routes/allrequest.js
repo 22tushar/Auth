@@ -56,8 +56,8 @@ router.get("/allCampany", async (req, res) => {
   router.post("/skills", async (req, res) => {
     
     const {skill1,skill2,skill3,skill4} = req.body;
-    var myData = await new Skill({skill1,skill2,skill3,skill4});
-    myData.save().then(()=>{
+    console.log(req.body)
+    await new Skill({skill1,skill2,skill3,skill4}).save().then(()=>{
     // console.log(myData)  
     res.send('This item has been saved to the database')
     }).catch(()=>{
