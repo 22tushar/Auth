@@ -8,6 +8,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 
 const useStyles = makeStyles((theme) => ({
 root: {
+paddingLeft:'20px',
 backgroundColor: 'black',
 color: 'white',
 '& .footer-container': {
