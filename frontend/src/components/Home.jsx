@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { addToCart } from "../slices/cartSlice";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 import Hero from "./Hero";
 // import { useGetAllProductsQuery } from "../slices/productsApi";
 
@@ -18,18 +18,20 @@ const Home = () => {
   };
 
   return (
+    <div>
     <div className="home-container">
       
       {status === "success" ? (
         <>
           <Hero/>
-          {/* <Footer/> */}
         </>
       ) : status === "pending" ? (
         <p>Loading...</p>
       ) : (
         <p>Unexpected error occured...</p>
       )}
+    </div>
+    <Footer/>
     </div>
   );
 };

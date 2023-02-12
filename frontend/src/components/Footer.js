@@ -7,53 +7,60 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .footer-container': {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: theme.spacing(2),
-      backgroundColor: theme.palette.background.paper,
-      [theme.breakpoints.down('sm')]: {
-        flexDirection: 'column'
-      }
-    },
-    '& .footer-section': {
-      [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing(2)
-      },
-      backgroundColor: theme.palette.background.paper,
-    },
-    '& .footer-section-title': {
-      marginBottom: theme.spacing(1),
-      fontWeight: 'bold'
-    },
-    '& .footer-section-list': {
-      listStyle: 'none',
-      margin: 0,
-      padding: 0,
-      '& a': {
-        color: theme.palette.text.secondary,
-        textDecoration: 'none',
-        '&:hover': {
-          color: theme.palette.primary.main
-        }
-      }
-    },
-    '& .social-icons': {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      '& .icon-button': {
-        margin: theme.spacing(0, 2)
-      }
-    },
-    '& .copyright': {
-      textAlign: 'center',
-      marginTop: theme.spacing(2),
-      color: theme.palette.text.secondary
-    }
-  }
+root: {
+backgroundColor: 'black',
+color: 'white',
+'& .footer-container': {
+display: 'flex',
+justifyContent: 'space-between',
+alignItems: 'center',
+padding: theme.spacing(2),
+backgroundColor: 'black',
+[theme.breakpoints.down('sm')]: {
+flexDirection: 'column'
+}
+},
+'& .footer-section': {
+[theme.breakpoints.down('sm')]: {
+marginBottom: theme.spacing(2)
+},
+backgroundColor: 'black',
+color: 'white',
+},
+'& .footer-section-title': {
+marginBottom: theme.spacing(1),
+fontWeight: 'bold',
+color: 'white',
+},
+'& .footer-section-list': {
+listStyle: 'none',
+margin: 0,
+padding: 0,
+'& a': {
+color: 'white',
+textDecoration: 'none',
+'&:hover': {
+color: theme.palette.primary.main
+}
+}
+},
+'& .social-icons': {
+display: 'flex',
+justifyContent: 'center',
+alignItems: 'center',
+color: 'white',
+'& .icon-button': {
+margin: theme.spacing(0, 2),
+color: 'white',
+}
+},
+'& .copyright': {
+textAlign: 'center',
+marginTop: theme.spacing(2),
+color: 'white'
+}
+
+}
 }));
 
 const Footer = () => {

@@ -9,7 +9,7 @@ const Hero = () => {
 Unleashing limitless opportunities for students and employers alike.
         </p>
       </div>
-      <img src='https://img.freepik.com/free-photo/business-partners-handshake-international-business-concept_53876-104046.jpg?w=996&t=st=1676205186~exp=1676205786~hmac=f03d9d4d2950b81782a8d682ab2468ce40d458b7c59390e6921c79f5275232e7' alt="Collaboration" style={styles.img} />
+      <img src='https://media.discordapp.net/attachments/1066435024720777331/1074345579129360464/3d-business-man-and-woman-working-at-the-table.png' alt="Collaboration" height="450px" width="350px" marginTop="20px" />
     </div>
   );
 };
