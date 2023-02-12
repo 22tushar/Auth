@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { addToCart } from "../slices/cartSlice";
+// import Footer from "./Footer";
+import Hero from "./Hero";
 // import { useGetAllProductsQuery } from "../slices/productsApi";
 
 const Home = () => {
@@ -20,23 +22,8 @@ const Home = () => {
       
       {status === "success" ? (
         <>
-          <h2>Home</h2>
-          <div className="products">
-            {data &&
-              data?.map((product) => (
-                <div key={product._id} className="product">
-                  <h3>{product.name}</h3>
-                  <img src={product.image?.url} alt={product.name} />
-                  <div className="details">
-                    <span>{product.desc}</span>
-                    <span className="price">${product.price}</span>
-                  </div>
-                  <button onClick={() => handleAddToCart(product)}>
-                    Add To Cart
-                  </button>
-                </div>
-              ))}
-          </div>
+          <Hero/>
+          {/* <Footer/> */}
         </>
       ) : status === "pending" ? (
         <p>Loading...</p>

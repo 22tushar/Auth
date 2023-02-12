@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <h2>Collabration</h2>
+        <h2>Collaboration</h2>
       </Link>
       {/* <Link to="/cart">
         <div className="nav-bag">
