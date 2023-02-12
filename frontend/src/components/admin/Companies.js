@@ -25,7 +25,7 @@ const items = [
   },
 ]
 
-const Acceptedlist = () => {
+const Companies = () => {
 
   const [company,Setcompany]=useState([])
   
@@ -73,9 +73,9 @@ const Acceptedlist = () => {
 
           </article>
         );
-      })}S
+      })}
     </div>
   );
 };
 
-export default Acceptedlist;
+export default Companies;

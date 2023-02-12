@@ -1,10 +1,10 @@
 import React, { useState , useEffect } from 'react';
-import './requests.css'
+// import './requests.css'
 import { url } from '../../slices/api';
 import axios from 'axios';
 import { Experimental_CssVarsProvider } from '@mui/material';
 import { toast } from 'react-toastify';
-import Headerfirst1 from './Headerfirst1'
+import Headerfirst1 from '../admin/Headerfirst1';
 const items = [
   {
     id: 1,
@@ -26,7 +26,7 @@ const items = [
   },
 ]
 
-const TPOlist = () => {
+const AllTPO = () => {
 
   const [TPO,SetTPO]=useState([])
   
@@ -67,4 +67,4 @@ const TPOlist = () => {
   );
 };
 
-export default TPOlist;
+export default AllTPO;

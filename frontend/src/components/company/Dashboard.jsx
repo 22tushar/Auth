@@ -3,7 +3,7 @@ import { Outlet, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import React from "react";
 
-const Dashboard = () => {
+const Dashboardc = () => {
   const auth = useSelector((state) => state.auth);
 
 //   if (!auth.isAdmin) return <p>Access denied. Not an Admin!</p>;
@@ -16,7 +16,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/Orders1"
+          to="/company/Orders"
         >
           
           All TPO
@@ -26,7 +26,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/summary"
+          to="/company/hiringrequest"
         >
           
         Hiring Requests
@@ -48,7 +48,7 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboardc;
 
 const StyledDashboard = styled.div`
   display: flex;

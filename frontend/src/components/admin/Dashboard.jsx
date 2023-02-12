@@ -4,58 +4,57 @@ import { useSelector } from "react-redux";
 import React from "react";
 
 const Dashboard = () => {
+  
   const auth = useSelector((state) => state.auth);
-
+  // React.useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   let token_obj = JSON.parse(token);
+    // console.log(token_obj)
+  // }, [])
   // if (!auth.isAdmin) return <p>Access denied. Not an Admin!</p>;
 
+  <h3>Quick Links</h3>
   return (
     <StyledDashboard>
       <SideNav>
-        <h3>Quick Links</h3>
-        {/* <NavLink
-          className={({ isActive }) =>
-            isActive ? "link-active" : "link-inactive"
-          }
-          to="/admin/summary"
-        >
-          Summary
-        </NavLink> */}
-         <NavLink
+
+        {auth.isAdmin ? (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/products"
         >
-        Add Client
-        </NavLink>
-        <NavLink
+          Add Client
+        </NavLink>) : null}
+
+       {auth.isAdmin ? null :(<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/orders"
         >
-          
-          Companies Hiring
-        </NavLink>
 
-        <NavLink
+          Companies Hiring
+        </NavLink>)}
+
+       {auth.isAdmin ? null :(<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/summary"
         >
-          
-          Accepted Requests
-        </NavLink>
 
-        <NavLink
+          Accepted Requests
+        </NavLink>) }
+
+        {auth.isAdmin ? null : (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/users"
         >
           All student data
-        </NavLink>
+        </NavLink>)}
       </SideNav>
       <Content>
         <Outlet />

@@ -1,18 +1,18 @@
 import React from 'react'
-import Acceptedlist from './components/Acceptedlist'
+// import Companies from './Companies'
 import Headerfirst from './components/Headerfirst'
-
 import './requests.css'
+import Acceptedlist from './components/Acceptedlist'
 
 const Summary = () => {
   return (
     <div className='RequestsFront'>
       <div  className="headerforaccepted">
             <div>
-                <Headerfirst/>
+              <Headerfirst/>
             </div>
             <div>
-                <Acceptedlist/>
+              <Acceptedlist/>
             </div>
       </div>
       
