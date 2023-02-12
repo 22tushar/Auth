@@ -82,7 +82,6 @@ const Algorithm = () => {
     const [allskill, setskill] = useState([]);
 
     useEffect(() => {
-        
         const fetchSkills = async ()=>{
             await axios.get(`${url}/allrequest/getskills`)
             .then(res=>{
@@ -93,9 +92,12 @@ const Algorithm = () => {
             })
         }
         fetchSkills();
-        // console.log(allskill[0].skill)
-        setGraphdata(sortByFrequency(company));
+        console.log(company)
     }, []);
+
+    const ShowData = () => {
+        setGraphdata(sortByFrequency(allskill));
+    }
 
     const skillandfreq = graphdata.map((currentValue, index) => {
         return {
@@ -109,6 +111,7 @@ const Algorithm = () => {
     return (
       
         <div className='bar'>
+            <button onClick={() => ShowData()}>ShowData</button>
             <BarChart width={800} height={400} data={skillandfreq}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <XAxis dataKey="skill_name" />
