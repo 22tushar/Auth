@@ -42,7 +42,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="algorithm" element={<Algorithm/>} />
             <Route path="/checkout-success" element={<CheckoutSuccess />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
@@ -52,6 +51,7 @@ function App() {
               <Route path="hiringrequest" element={<HRequest/>} />
             </Route>
             <Route path="/admin" element={<Dashboard />}>
+            <Route path="algorithm" element={<Algorithm/>} />
               <Route path="adminpage" element={<Adminpage />} />
               <Route path="summary" element={<Summary />} />
               <Route path="products" element={<Products />}>
