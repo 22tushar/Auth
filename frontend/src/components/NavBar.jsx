@@ -46,7 +46,7 @@ const NavBar = () => {
               toast.warning("Logged out!", { position: "bottom-left" });
             }}
           >
-            Logout
+           {auth._id ? (<h4>Logout</h4>) : null}
           </div>
         </Links>
       ) : (
