@@ -27,8 +27,8 @@ const styles = {
     width: "45%",
   },
   title: {
-    fontSize: "36px",
-    fontWeight: "bold",
+    fontSize: "60px",
+    fontWeight: "extra-bold",
     marginBottom: "20px",
   },
   text: {
