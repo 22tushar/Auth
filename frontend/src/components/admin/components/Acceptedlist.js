@@ -27,7 +27,7 @@ const Acceptedlist = () => {
   
   useEffect(()=>{
     const fetchPosts = async ()=>{
-        await axios.get(`${url}/allrequest/requestAccept`)
+        await axios.get(`${url}/allrequest/Accepted`)
         .then(res=>{
           SetAccepted(res.data);
         }).catch(err=>{
