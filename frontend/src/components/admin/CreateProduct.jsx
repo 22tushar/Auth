@@ -21,9 +21,6 @@ const CreateProduct = () => {
   });
   const [skill, setSkill] = useState({
     skill1:"",
-    skill2: "",
-    skill3:"",
-    skill4: "",
   });
 
   // const handleProductImageUpload = (e) => {
@@ -100,7 +97,17 @@ const CreateProduct = () => {
          <input
           type="text"
           placeholder="Add second skill"
-          onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
+          // onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
+        />
+         <input
+          type="text"
+          placeholder="Add second skill"
+          // onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
+        />
+         <input
+          type="text"
+          placeholder="Add second skill"
+          // onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
         />
         
         
