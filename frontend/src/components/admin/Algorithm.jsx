@@ -92,8 +92,8 @@ const Algorithm = () => {
             })
         }
         fetchSkills();
-        console.log(allskill[0].skill)
-        setGraphdata(sortByFrequency(allskill));
+        // console.log(allskill[0].skill)
+        setGraphdata(sortByFrequency(company));
     }, []);
 
     const skillandfreq = graphdata.map((currentValue, index) => {
