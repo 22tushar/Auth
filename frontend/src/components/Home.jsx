@@ -17,9 +17,10 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      
       {status === "success" ? (
         <>
-          <h2>New Arrivals</h2>
+          <h2>Home</h2>
           <div className="products">
             {data &&
               data?.map((product) => (

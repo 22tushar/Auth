@@ -25,6 +25,7 @@ import AllTPO from "./components/company/Orders";
 import Algorithm from "./components/admin/Algorithm";
 import Dashboardc from "./components/company/Dashboard";
 import HRequest from "./components/company/hiringrequest";
+import TPODashboard from "./components/admin/tpoDashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,12 +52,13 @@ function App() {
               <Route path="hiringrequest" element={<HRequest/>} />
             </Route>
             <Route path="/admin" element={<Dashboard />}>
+            <Route path="tpodashboard" element={<TPODashboard/>} />
             <Route path="algorithm" element={<Algorithm/>} />
               <Route path="adminpage" element={<Adminpage />} />
               <Route path="summary" element={<Summary />} />
-              <Route path="products" element={<Products />}>
+              {/* <Route path="products" element={<Products />}>
                 <Route path="create-product" element={<CreateProduct />} />
-              </Route>
+              </Route> */}
               <Route path="users" element={<Users />} />
               <Route path="orders" element={<Orders />} />
               <Route path="orders1" element={<AllTPO/>} />
