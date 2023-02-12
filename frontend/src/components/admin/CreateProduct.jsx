@@ -6,6 +6,8 @@ import { PrimaryButton } from "./CommonStyled";
 import { productsCreate } from "../../slices/productsSlice";
 import { registerUser } from "../../slices/authSlice";
 import { toast } from "react-toastify";
+import axios from "axios";
+import { url } from "../../slices/api";
 const CreateProduct = () => {
   const dispatch = useDispatch();
   const { createStatus } = useSelector((state) => state.products);
@@ -16,6 +18,12 @@ const CreateProduct = () => {
     desc:"",
     email: "",
     password: "",
+  });
+  const [skill, setSkill] = useState({
+    skill1:"",
+    skill2: "",
+    skill3:"",
+    skill4: "",
   });
 
   // const handleProductImageUpload = (e) => {
@@ -43,6 +51,17 @@ const CreateProduct = () => {
     console.log(user);
 
     dispatch(registerUser(user));
+
+    const pushskill = async () =>{
+      try {
+        const token = await axios.post(`${url}/allrequest/skills`, {
+             skill
+        });
+      } catch (error) {
+        console.log('skill error');
+      }
+    }
+    pushskill()
     toast.success("Client Added", { position: "top-right" });
     // navigate('/Home.js')
   };
@@ -70,6 +89,22 @@ const CreateProduct = () => {
           placeholder="desc"
           onChange={(e) => setUser({ ...user, desc: e.target.value })}
         />
+
+        {/* ........skill............... */}
+        
+        <input
+          type="text"
+          placeholder="Add first skill"
+          onChange={(e) => setSkill({ ...skill, skill1: e.target.value })}
+        />
+         <input
+          type="text"
+          placeholder="Add second skill"
+          onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
+        />
+        
+        
+        {/* ............skill............... */}
         <input
           type="email"
           placeholder="email"

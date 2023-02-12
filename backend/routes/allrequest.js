@@ -1,4 +1,5 @@
 const { User } = require("../models/user");
+const { Skill } = require("../models/skill");
 const { auth, isUser, isAdmin } = require("../middleware/auth");
 const router = require("express").Router();
 
@@ -51,6 +52,28 @@ router.get("/allCampany", async (req, res) => {
         res.status(500).send(error);
       }
   });
+
+  router.post("/skills", async (req, res) => {
+    
+    const {skill1,skill2,skill3,skill4} = req.body;
+    var myData = await new Skill({skill1,skill2,skill3,skill4});
+    myData.save().then(()=>{
+    // console.log(myData)  
+    res.send('This item has been saved to the database')
+    }).catch(()=>{
+    res.status(400).send('item was not saved to the databse')
+  });
+})
+router.get("/getskills", async (req, res) => {
+    
+  try {
+    const allskill= await Skill.find();
+    res.status(200).send(allskill)
+    console.log(allskill[0].skill)
+  } catch (error) {
+    res.status(500).send(error);
+  }
+})
 
   router.get("/HRequest", async (req, res) => {
   

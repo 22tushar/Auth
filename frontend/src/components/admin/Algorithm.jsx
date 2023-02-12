@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar } from 'recharts';
-
+import axios from 'axios';
+import { url } from '../../slices/api';
 const company = [
     {
         id: 1,
@@ -77,9 +78,22 @@ function sortByFrequency(array) {
 const Algorithm = () => {
 
     const [graphdata, setGraphdata] = useState([]);
+    const [allskill, setskill] = useState([]);
 
     useEffect(() => {
-        setGraphdata(sortByFrequency(company));
+        
+        const fetchSkills = async ()=>{
+            await axios.get(`${url}/allrequest/getskills`)
+            .then(res=>{
+                setskill(res.data);
+                console.log(res.data)
+            }).catch(err=>{
+                console.log(err);
+            })
+        }
+        fetchSkills();
+        console.log(allskill[0].skill)
+        setGraphdata(sortByFrequency(allskill));
     }, []);
 
     const skillandfreq = graphdata.map((currentValue, index) => {

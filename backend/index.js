@@ -30,7 +30,6 @@ app.get("/", (req, res) => {
 app.get("/products", (req, res) => {
   res.send(products);
 });
-
 const uri = process.env.DB_URI;
 const port = process.env.PORT || 5000;
 

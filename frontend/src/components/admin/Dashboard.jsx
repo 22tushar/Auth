@@ -55,6 +55,14 @@ const Dashboard = () => {
         >
           All student data
         </NavLink>)}
+        {auth.isAdmin ? null : (<NavLink
+          className={({ isActive }) =>
+            isActive ? "link-active" : "link-inactive"
+          }
+          to="/algorithm"
+        >
+          Skills Recommmendatiom 
+        </NavLink>)}
       </SideNav>
       <Content>
         <Outlet />
