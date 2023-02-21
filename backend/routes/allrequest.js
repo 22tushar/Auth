@@ -58,7 +58,7 @@ router.post("/skills", async (req, res) => {
 
   const { skill } = req.body;
   console.log(skill.skill1)
-  var myData = new Skill({x:skill.skill1});
+  var myData = new Skill({skill:skill.skill1});
    myData.save()
   //  console.log
     .then(item => {

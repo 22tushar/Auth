@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const skillsSchema = new mongoose.Schema(
   {
-    x: { type: String },
+    skill: { type: String },
   },
 );
 
