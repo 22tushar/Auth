@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Experimental_CssVarsProvider } from '@mui/material';
 import { toast } from 'react-toastify';
 import Headerfirst2 from '../admin/Headerfirst2';
-
+import {  NavLink } from "react-router-dom";
 const items = [
   {
     id: 1,
@@ -54,6 +54,7 @@ const accept = (email) =>{
     })
 }
 fetchPosts()
+toast.success("Accepted", { position: "top-right" });
 }
 const reject = (email) =>{
   const fetchPosts = async ()=>{
@@ -65,6 +66,7 @@ const reject = (email) =>{
     })
 }
 fetchPosts()
+toast.success("Rejected", { position: "top-right" });
 }
 
 
@@ -75,6 +77,7 @@ fetchPosts()
       {HRequest.map((listitem) => {
         const { id,name, email } = listitem;
         return (
+          <NavLink to='/company/interview'>
           <article key={id} className='menu-item'>
             <img src='https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg' alt={name} className='photo' />
             <div className='item-info'>
@@ -88,6 +91,7 @@ fetchPosts()
             <button className="sendrequest" onClick={() => reject(email)}>Reject Request</button>
 
           </article>
+          </NavLink>
         );
       })}
     </div>

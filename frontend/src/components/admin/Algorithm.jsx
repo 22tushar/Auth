@@ -21,50 +21,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const company = [
-    {
-        id: 1,
-        cname: 'microsoft',
-        sector: 'technology',
-        skill: 'react',
-    },
-    {
-        id: 2,
-        cname: 'google',
-        sector: 'technology',
-        skill: 'angular',
-    },
-    {
-        id: 3,
-        cname: 'jpmc',
-        sector: 'finance',
-        skill: 'ml',
-    },
-    {
-        id: 4,
-        cname: 'goldman',
-        sector: 'finance',
-        skill: 'react',
-    },
-    {
-        id: 5,
-        cname: 'byjus',
-        sector: 'edutech',
-        skill: 'flutter',
-    },
-    {
-        id: 6,
-        cname: 'byjus',
-        sector: 'edutech',
-        skill: 'flutter',
-    },
-    {
-        id: 7,
-        cname: 'byjus',
-        sector: 'edutech',
-        skill: 'flutter',
-    },
-]
 
 var frequency = {};
 
@@ -110,7 +66,7 @@ const Algorithm = () => {
             })
         }
         fetchSkills();
-        console.log(company)
+        // console.log(company)
     }, []);
 
     const ShowData = () => {
@@ -121,7 +77,7 @@ const Algorithm = () => {
         return {
             id: index,
             skill_name: graphdata[index],
-            skill_freq: (frequency[graphdata[index]]/graphdata.length)*100,
+            skill_freq: (frequency[graphdata[index]]/allskill.length)*100,
         }
     })
     console.log(skillandfreq);

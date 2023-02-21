@@ -5,26 +5,6 @@ import axios from 'axios';
 import { Experimental_CssVarsProvider } from '@mui/material';
 import { toast } from 'react-toastify';
 import Headerfirst1 from './Headerfirst1'
-const items = [
-  {
-    id: 1,
-    cname: 'MS',
-    skills: 'react',
-    email: 'check1@gmail.com'
-  },
-  {
-    id: 1,
-    cname: 'JP',
-    skills: 'finance api',
-    email: 'js@outlook.com'
-  },
-  {
-    id: 1,
-    cname: 'GS',
-    skills: 'database mining',
-    email: 'rels@outlook.com'
-  },
-]
 
 const TPOlist = () => {
 

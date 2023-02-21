@@ -75,12 +75,13 @@ const CreateProduct = () => {
           {/* // <option value="xiomi">Xiomi</option> */}
         </select>
        
+        name
         <input
           type="text"
           placeholder="name"
           onChange={(e) => setUser({ ...user, name: e.target.value })}
         />
-
+         Description
         <input
           type="text"
           placeholder="desc"
@@ -88,35 +89,23 @@ const CreateProduct = () => {
         />
 
         {/* ........skill............... */}
-        
+        Add first skill
         <input
           type="text"
           placeholder="Add first skill"
           onChange={(e) => setSkill({ ...skill, skill1: e.target.value })}
         />
-         <input
-          type="text"
-          placeholder="Add second skill"
-          // onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
-        />
-         <input
-          type="text"
-          placeholder="Add second skill"
-          // onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
-        />
-         <input
-          type="text"
-          placeholder="Add second skill"
-          // onChange={(e) => setSkill({ ...skill, skill2: e.target.value })}
-        />
+       
         
         
         {/* ............skill............... */}
+        email
         <input
           type="email"
           placeholder="email"
           onChange={(e) => setUser({ ...user, email: e.target.value })}
         />
+          Create Password
           <input
           type="password"
           placeholder="password"

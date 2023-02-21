@@ -19,11 +19,12 @@ export default function Headerfirst() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            {/* <MenuIcon /> */}
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Companies Hiring Currently
           </Typography>
+          <h1>TPO Dashboard</h1>
         </Toolbar>
       </AppBar>
     </Box>

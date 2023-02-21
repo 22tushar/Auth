@@ -40,3 +40,12 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
+.item-info{
+    padding: 0px 15px;
+}
+
+.email{
+    font-size: 15px;
+    font-weight: 300;
+}

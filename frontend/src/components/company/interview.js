@@ -33,107 +33,16 @@ const useStyles = makeStyles(theme => ({
     }
   },
   showButton:{
-    border: '2px solid green',
-    padding: '10px',
-    fontweight: '600',
-    backgroundcolor: 'lightgreen',
-    borderradius: '10px',
+    marginLeft: '226px',
+    color:'black',
+    fontSize:'15px',
+    backgroundColor:'lawngreen',
+    fontWeight:'500',
+    padding:'2px 15px',
+    borderRadius:'20px',
+    boxShadow:'10px 4px 7px lightblue',
   }
 }));
-
-const stud = [
-    {
-        id: 1,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Electrical',
-        college: 'Manit bhopal',
-        company: 'Microsoft',
-        package: 25,
-    },
-    {
-        id: 2,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Electrical',
-        college: 'Manit bhopal',
-        company: 'Atlassian',
-        package: 20,
-    },
-    {
-        id: 3,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Mechanical',
-        college: 'Manit bhopal',
-        company: 'Google',
-        package: 35,
-    },
-    {
-        id: 4,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Computer',
-        college: 'Manit bhopal',
-        company: 'JPMC',
-        package: 28,
-    },
-    {
-        id: 5,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Electronics',
-        college: 'Manit bhopal',
-        company: 'JPMC',
-        package: 10,
-    },
-    {
-        id: 6,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Civil',
-        college: 'Manit bhopal',
-        company: 'Core',
-        package: 8,
-    },
-    {
-        id: 7,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Chemical',
-        college: 'Manit bhopal',
-        company: 'Core',
-        package: 15,
-    },
-    {
-        id: 8,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'MSME',
-        college: 'Manit bhopal',
-        company: 'Core',
-        package: 19,
-    },
-    {
-        id: 9,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Computer',
-        college: 'Manit bhopal',
-        company: 'Core',
-        package: 18,
-    },
-    {
-        id: 10,
-        sname: 'abcd',
-        email: 'kg@gmail.com',
-        branch: 'Mechanical',
-        college: 'Manit bhopal',
-        company: 'Core',
-        package: 15,
-    },
-
-]
 
 var avg_frequency = {};
 var high_frequency = {};
@@ -296,11 +205,11 @@ const Interview = () => {
     })
     // console.log(fullcompanydata);
     // console.log(branchandfreq);
-
+    const classes =useStyles()
     return (<>
         <div className='classes.studentgraphs'>
-
-            <button className='classes.showButton' onClick={() => { showData() }}>Show Statistics</button>
+            <h1>Previous Year student Data of this college</h1>
+            <button className={classes.showButton} onClick={() => { showData() }}>Show Statistics</button>
             <div>
                 <BarChart width={500} height={400} data={branchandfreq}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>

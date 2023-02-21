@@ -32,14 +32,14 @@ const Dashboardc = () => {
         Hiring Requests
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/company/interview"
         >
-          Student Data
-        </NavLink>
+         Previous Year Student Data
+        </NavLink> */}
       </SideNav>
       <Content>
         <Outlet />

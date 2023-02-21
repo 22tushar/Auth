@@ -1,34 +1,14 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState , useEffect , useSelector } from 'react';
 import './requests.css'
 import { url } from '../../slices/api';
 import axios from 'axios';
 import { Experimental_CssVarsProvider } from '@mui/material';
 import { toast } from 'react-toastify';
-const items = [
-  {
-    id: 1,
-    cname: 'MS',
-    skills: 'react',
-    email: 'check1@gmail.com'
-  },
-  {
-    id: 1,
-    cname: 'JP',
-    skills: 'finance api',
-    email: 'js@outlook.com'
-  },
-  {
-    id: 1,
-    cname: 'GS',
-    skills: 'database mining',
-    email: 'rels@outlook.com'
-  },
-]
-
+ 
 const Companies = () => {
 
   const [company,Setcompany]=useState([])
-  
+  // const auth = useSelector((state) => state.auth);
   useEffect(()=>{
     const fetchPosts = async ()=>{
         await axios.get(`${url}/allrequest/allCampany`)
@@ -39,6 +19,7 @@ const Companies = () => {
         })
     }
     fetchPosts()
+    // console.log(auth)
 },[])
 
 
@@ -49,23 +30,25 @@ const Companies = () => {
          email:email,
         });
         console.log("Sent");
+        // toast.success("Request Sent", { position: "Top-right" });
       } catch (error) {
         console.log("Not sent");
       }
-      // toast.success("Request Sent", { position: "Top-right" });
+     
       alert("request Sent")
   }
   return (
     <div className='section-center-people-search'>
       {company.map((listitem) => {
-        const { id, cname, skills, email } = listitem;
+        const { id, name, desc , email } = listitem;
         return (
           <article key={id} className='menu-item'>
-            <img src='https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg' alt={cname} className='photo' />
+            <img src='https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg' alt={name} className='photo' />
             <div className='item-info'>
               <header>
-                <h4>{cname}</h4>
-                <h4 className='price'>{skills}</h4>
+                <h4>{name}</h4>
+                {/* <h4 className='price'>{skills}</h4> */}
+                <h4 className="email">{desc}</h4>
                 <h4 className="email">{email}</h4>
               </header>
             </div>

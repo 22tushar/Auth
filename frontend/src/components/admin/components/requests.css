@@ -30,3 +30,8 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.price{
+    font-size: 15px;
+    font-weight: 300;
+}
