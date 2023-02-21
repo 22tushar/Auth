@@ -15,11 +15,13 @@ const Login = () => {
   });
 
   useEffect(() => {
-    if(auth.isAdmin){
+    if(auth.isAdmin === 'admin'){
        navigate("/admin/adminpage")
     }else
-    if (auth._id) {
+    if (auth.isAdmin === 'company') {
       navigate("/company/companydashboard");
+    }else if(auth.isAdmin === 'TPO'){
+      navigate("/admin/tpodashboard");
     }
   }, [auth._id, navigate]);
 
