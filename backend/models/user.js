@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema(
     reqAccept: { type: Boolean, default: false },
     C: { type: Boolean, default: false },
     T: { type: Boolean, default: false },
-    isAdmin: { type: Boolean, default: false },
+    isAdmin: { type: String, default: 'User' },
   },
   { timestamps: true }
 );
